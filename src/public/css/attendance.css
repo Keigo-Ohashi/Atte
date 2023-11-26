@@ -1,0 +1,107 @@
+.date {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.375em;
+    font-weight: bold;
+}
+
+.inner-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.today {
+    width: fit-content;
+    margin: 0 1em;
+}
+
+.date-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 30px;
+    border: 1px solid #214ae0;
+    border-radius: 2px;
+    align-content: center;
+    color: #214ae0;
+    background-color: #fff;
+}
+
+.attendance-table {
+    width: 90%;
+    height: 60%;
+    margin: 0 auto;
+}
+
+.attendance-row {
+    height: calc(100% / 6);
+    display: flex;
+    border-top: 1px solid #909090;
+}
+
+.attendance-cell {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.attendance-cell.head {
+    font-weight: bold;
+}
+
+.attendance-cell.left {
+    justify-content: left;
+}
+
+.attendance-cell.left .inner-cell {
+    margin-left: 2em;
+}
+
+.page-links {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination {
+    display: flex;
+    width: fit-content;
+}
+
+.page-item {
+    border: 1px solid #eee;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.page-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #2384cf;
+}
+
+.page-item.active {
+    background-color: #2384cf;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+}
+
+.page-item.disabled .page-link {
+    color: #777;
+}
