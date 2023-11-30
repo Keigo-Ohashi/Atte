@@ -54,7 +54,7 @@
     </div>
 
 
-    @foreach ($attendances as $attendance)
+    @foreach ($attendanceList as $attendance)
       <div class="attendance-row">
 
         <div class="attendance-cell left">
@@ -84,7 +84,7 @@
 
   <div class="page-links">
     <div class="inner-page-links">
-      {{ $attendances->links() }}
+      {{ $attendanceList->links() }}
     </div>
   </div>
 @endsection

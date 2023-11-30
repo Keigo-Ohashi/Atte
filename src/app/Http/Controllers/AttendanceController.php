@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Services\AttendanceService;
+use App\Services\Attendance\AttendanceService;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -13,9 +13,9 @@ class AttendanceController extends Controller
 {
     private $attendanceService;
 
-    public function __construct()
+    public function __construct(AttendanceService $attendanceService)
     {
-        $this->attendanceService = new AttendanceService;
+        $this->attendanceService = $attendanceService;
     }
 
     // ホーム
@@ -88,7 +88,7 @@ class AttendanceController extends Controller
     }
 
     // 日ごとの勤務リスト
-    public function showAttendanceList(Request $request, $date = 'today'): View
+    public function showAttendanceList($date = 'today'): View
     {
         // 日付を設定
         if ($date == 'today') {
@@ -102,9 +102,10 @@ class AttendanceController extends Controller
         $date = $date->toDateString();
 
         // 勤務リストを取得
-        $attendances = $this->attendanceService->getAttendanceList($date);
+        $attendanceList = $this->attendanceService->getAttendanceList($date, 5);
 
         // 勤務リストページを表示
-        return view('attendance', compact('previousDate', 'date', 'nextDate', 'attendances'));
+        return view('attendance', compact('previousDate', 'date', 'nextDate', 'attendanceList'));
     }
+
 }

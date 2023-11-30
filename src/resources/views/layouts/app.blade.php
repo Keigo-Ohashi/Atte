@@ -28,6 +28,10 @@
           </li>
 
           <li class="header-nav__item">
+            <a class="header-nav__link" href="/user">会員一覧</a>
+          </li>
+
+          <li class="header-nav__item">
             <a class="header-nav__link" href="/attendance">日付一覧</a>
           </li>
 

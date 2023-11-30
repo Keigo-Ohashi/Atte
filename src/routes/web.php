@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/break-begin', [AttendanceController::class, 'breakBegin']);
     Route::patch('/break-end', [AttendanceController::class, 'breakEnd']);
     Route::get('/attendance/{date?}', [AttendanceController::class, 'showAttendanceList']);
+    Route::get('/user', [UserController::class, 'showUserList']);
     // Route::prefix('attendance/')->group(function () {
-        
+
 
     // });
 });
