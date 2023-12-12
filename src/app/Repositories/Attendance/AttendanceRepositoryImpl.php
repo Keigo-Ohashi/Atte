@@ -85,4 +85,10 @@ class AttendanceRepositoryImpl implements AttendanceRepository
     {
         return Attendance::whereDate('clocked_in_at', Carbon::yesterday())->whereNull('clocked_out_at')->get();
     }
+
+    // 特定のユーザーの勤務リストを取得
+    public function getAttendanceList($id, $perPage): LengthAwarePaginator
+    {
+        return Attendance::where('user_id', '=', $id)->join('users', 'user_id', '=', 'users.id')->orderBy('clocked_in_at', 'desc')->paginate($perPage);
+    }
 }

@@ -10,19 +10,27 @@
 
 @section('main')
   <div class="title">
-    ユーザー一覧
+    会員一覧
   </div>
 
   <div class="user-table">
 
     <div class="user-row">
 
-      <div class="user-cell head left">
+      <div class="user-cell head">
         <div class="inner-cell">名前</div>
       </div>
 
       <div class="user-cell head">
         <div class="inner-cell">メールアドレス</div>
+      </div>
+
+      <div class="user-cell head">
+        <div class="inner-cell">認証ステータス</div>
+      </div>
+
+      <div class="user-cell head">
+        <div class="inner-cell">登録日</div>
       </div>
 
     </div>
@@ -31,12 +39,26 @@
     @foreach ($userList as $user)
       <div class="user-row">
 
-        <div class="user-cell left">
-          <div class="inner-cell">{{ $user['name'] }}</div>
+        <div class="user-cell">
+          <div class="inner-cell"><a href="user/{{$user->id}}">{{ $user['name'] }}</a></div>
         </div>
 
         <div class="user-cell">
           <div class="inner-cell">{{ $user['email'] }}</div>
+        </div>
+
+        <div class="user-cell">
+          <div class="inner-cell">
+            @if ($user->hasVerifiedEmail())
+            認証済み
+            @else
+            未認証
+            @endif
+          </div>
+        </div>
+
+        <div class="user-cell">
+          <div class="inner-cell">{{ $user['registerDate'] }}</div>
         </div>
 
       </div>

@@ -18,7 +18,7 @@
       <a href="/">Atte</a>
     </div>
 
-    @if (Auth::check())
+    @if (Auth::check() && Auth::user()->hasVerifiedEmail())
       <nav>
 
         <ul class="header-nav">

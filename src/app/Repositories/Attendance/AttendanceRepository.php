@@ -27,10 +27,12 @@ interface AttendanceRepository
     // 休憩終了処理
     public function breakEnd(int $id, Carbon $datetime): void;
 
-    // 特定の日の勤務記録を取得
+    // 特定の日の勤務リストを取得
     public function getAttendanceListOfDay(String $date, int $perPage): LengthAwarePaginator;
 
     // 全ユーザーの勤務中のレコードを取得
     public function getPreviousDayAttendanceAllOnWork(): Collection;
 
+    // 特定のユーザーの勤務リストを取得
+    public function getAttendanceList($id, $perPage): LengthAwarePaginator;
 }

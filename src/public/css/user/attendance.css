@@ -1,0 +1,39 @@
+.title {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.375em;
+    font-weight: bold;
+}
+
+.attendance-table {
+    width: 90%;
+    height: 60%;
+    margin: 0 auto;
+}
+
+.attendance-row {
+    height: calc(100% / 6);
+    display: flex;
+    border-top: 1px solid #909090;
+}
+
+.attendance-cell {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.attendance-cell.head {
+    font-weight: bold;
+}
+
+.attendance-cell.left {
+    justify-content: left;
+}
+
+.attendance-cell.left .inner-cell {
+    margin-left: 2em;
+}

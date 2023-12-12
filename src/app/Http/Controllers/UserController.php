@@ -21,4 +21,13 @@ class UserController extends Controller
         // ユーザー一覧ページを表示
         return view('/user/index', compact('userList'));
     }
+
+    // ユーザー別勤怠表
+    public function showAttendanceList($id)
+    {
+        $user = $this->userService->getUser($id);
+        $attendanceList = $this->userService->getAttendanceList($id, 5);
+
+        return view('/user/attendance', compact('user', 'attendanceList'));
+    }
 }

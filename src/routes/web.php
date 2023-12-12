@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\UserController;
+use Illuminate\Auth\Events\Verified;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::middleware('auth')->group(function () {
+Route::middleware('verified')->group(function () {
     Route::get('/', [AttendanceController::class, 'home']);
     Route::post('/clock-in', [AttendanceController::class, 'clockIn']);
     Route::patch('/clock-out', [AttendanceController::class, 'clockOut']);
@@ -23,8 +24,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/break-end', [AttendanceController::class, 'breakEnd']);
     Route::get('/attendance/{date?}', [AttendanceController::class, 'showAttendanceList']);
     Route::get('/user', [UserController::class, 'showUserList']);
-    // Route::prefix('attendance/')->group(function () {
-
-
-    // });
+    Route::get('/user/{id}', [UserController::class, 'showAttendanceList']);
 });

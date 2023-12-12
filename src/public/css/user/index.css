@@ -1,0 +1,44 @@
+.title {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.375em;
+    font-weight: bold;
+}
+
+.user-table {
+    width: 90%;
+    height: 60%;
+    margin: 0 auto;
+}
+
+.user-row {
+    height: calc(100% / 6);
+    display: flex;
+    border-top: 1px solid #909090;
+}
+
+.user-cell {
+    width: calc(100% / 4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-cell.head {
+    font-weight: bold;
+}
+
+.user-cell.left {
+    justify-content: left;
+}
+
+.user-cell.left .inner-cell {
+    margin-left: 2em;
+}
+
+.user-cell a {
+    border-bottom: 1px solid #000;
+    padding: 0 0.5em;
+}

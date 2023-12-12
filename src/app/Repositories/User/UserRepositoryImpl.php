@@ -7,6 +7,13 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class UserRepositoryImpl implements UserRepository
 {
+
+    // ユーザー情報を取得
+    public function find(int $id): User
+    {
+        return User::find($id);
+    }
+
     // ユーザーリストを取得
     public function getUserList(int $perPage): LengthAwarePaginator
     {

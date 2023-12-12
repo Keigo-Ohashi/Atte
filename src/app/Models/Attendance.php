@@ -58,4 +58,9 @@ class Attendance extends Model
             return gmdate('H:i:s', strtotime($this->clocked_out_at) - strtotime($this->clocked_in_at));
         }
     }
+
+    public function getDateAttribute(): String
+    {
+        return $this->clocked_in_at->toDateString();
+    }
 }
