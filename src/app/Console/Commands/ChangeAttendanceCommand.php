@@ -29,10 +29,10 @@ class ChangeAttendanceCommand extends Command
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(AttendanceRepository $attendanceRepository)
     {
         parent::__construct();
-        $this->attendanceRepository = new AttendanceRepository;
+        $this->attendanceRepository = $attendanceRepository;
     }
 
     /**
