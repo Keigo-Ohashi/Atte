@@ -25,3 +25,7 @@ Laravel 8.x
 ## ER 図
 
 ![ER](https://github.com/Keigo-Ohashi/Atte/assets/143822636/59c3ebec-faa5-4eca-bb70-b31c3f8a5822)
+
+## サイト URL
+
+http://3.26.23.212/
