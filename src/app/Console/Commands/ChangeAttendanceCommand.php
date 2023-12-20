@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Carbon\Carbon;
-use App\Repositories\AttendanceRepository;
+use App\Repositories\Attendance\AttendanceRepository;
 
 class ChangeAttendanceCommand extends Command
 {
@@ -29,10 +29,10 @@ class ChangeAttendanceCommand extends Command
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(AttendanceRepository $attendanceRepository)
     {
         parent::__construct();
-        $this->attendanceRepository = new AttendanceRepository;
+        $this->attendanceRepository = $attendanceRepository;
     }
 
     /**
